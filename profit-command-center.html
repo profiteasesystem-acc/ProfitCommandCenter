@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#050608">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Profit Command Center Ltd | Official Brand Standards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C96A;
+    --gold-dim: #8A6B28;
+    --black: #050608;
+    --deep: #0A0C10;
+    --surface: #0F1116;
+    --panel: #141720;
+    --border: rgba(201,168,76,0.18);
+    --border-soft: rgba(255,255,255,0.06);
+    --text: #F0EDE6;
+    --muted: #8A8680;
+    --accent: #00D4AA;
+    --accent-dim: rgba(0,212,170,0.12);
+    --danger: #FF4F4F;
+    --tiktok: #FF0050;
+    --nav-h: 64px;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html { scroll-behavior:smooth; font-size:16px; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body::before {
+    content:'';
+    position:fixed; inset:0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+    background-size:60px 60px;
+    pointer-events:none; z-index:0;
+  }
+
+  /* ── LANG TOGGLE BANNER ── */
+  .lang-banner {
+    position:fixed; top:0; left:0; right:0; z-index:200;
+    background: rgba(201,168,76,0.12);
+    border-bottom:1px solid var(--border);
+    padding:8px 1.5rem;
+    display:flex; align-items:center; justify-content:space-between;
+    font-family:'DM Mono', monospace; font-size:11px;
+    transition:all 0.3s;
+  }
+  .lang-banner-text { color: var(--gold); letter-spacing:0.1em; }
+  .lang-toggle-btns { display:flex; gap:8px; }
+  .lang-btn {
+    border:1px solid var(--border); background:transparent;
+    color:var(--muted); font-family:'DM Mono', monospace;
+    font-size:10px; letter-spacing:0.15em; padding:4px 12px;
+    cursor:pointer; transition:all 0.2s; text-transform:uppercase;
+  }
+  .lang-btn.active { border-color:var(--gold); color:var(--gold); background:rgba(201,168,76,0.08); }
+  .lang-btn:hover { border-color:var(--gold); color:var(--gold); }
+  .lang-banner-close {
+    background:none; border:none; color:var(--muted);
+    font-size:16px; cursor:pointer; padding:0 0 0 12px; line-height:1;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position:fixed; left:0; right:0; z-index:100;
+    background:rgba(5,6,8,0.94);
+    backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--border);
+    height:var(--nav-h);
+    display:flex; align-items:center;
+    justify-content:space-between;
+    padding:0 2rem;
+    transition:top 0.3s;
+  }
+
+  .nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .nav-logo-mark {
+    width:34px; height:34px;
+    background:linear-gradient(135deg, var(--gold) 0%, var(--gold-dim) 100%);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Syne', sans-serif; font-weight:800; font-size:17px;
+    color:var(--black);
+    clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+    flex-shrink:0;
+  }
+  .nav-logo-text {
+    font-family:'Syne', sans-serif; font-weight:700;
+    font-size:13px; color:var(--text);
+    letter-spacing:0.06em; text-transform:uppercase; line-height:1.2;
+  }
+  .nav-logo-text span { display:block; font-size:9px; font-weight:400; color:var(--gold); letter-spacing:0.2em; }
+
+  .nav-links { display:flex; gap:1.5rem; list-style:none; }
+  .nav-links a { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); text-decoration:none; transition:color 0.2s; white-space:nowrap; }
+  .nav-links a:hover { color:var(--gold); }
+
+  .nav-right { display:flex; align-items:center; gap:1rem; flex-shrink:0; }
+
+  .nav-tiktok-btn {
+    display:flex; align-items:center; gap:6px;
+    background:var(--tiktok); color:#fff;
+    padding:7px 14px;
+    font-family:'Syne', sans-serif; font-weight:700;
+    font-size:11px; letter-spacing:0.08em;
+    text-decoration:none; text-transform:uppercase;
+    white-space:nowrap;
+    clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%);
+    transition:opacity 0.2s;
+  }
+  .nav-tiktok-btn:hover { opacity:0.85; }
+  .tiktok-icon { width:14px; height:14px; flex-shrink:0; }
+
+  .nav-status { display:flex; align-items:center; gap:6px; font-family:'DM Mono', monospace; font-size:10px; color:var(--accent); white-space:nowrap; }
+  .status-dot { width:6px; height:6px; background:var(--accent); border-radius:50%; animation:pulse 2s infinite; flex-shrink:0; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  /* HAMBURGER */
+  .hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px; }
+  .hamburger span { display:block; width:22px; height:2px; background:var(--text); border-radius:2px; transition:all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity:0; }
+  .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+  /* MOBILE NAV DRAWER */
+  .mobile-menu {
+    display:none; position:fixed; top:0; left:0; right:0; bottom:0;
+    background:rgba(5,6,8,0.98); z-index:99;
+    flex-direction:column; align-items:center; justify-content:center;
+    gap:2rem; padding:2rem;
+  }
+  .mobile-menu.open { display:flex; }
+  .mobile-menu a {
+    font-family:'Syne', sans-serif; font-weight:700;
+    font-size:clamp(1.4rem,5vw,2rem); color:var(--muted);
+    text-decoration:none; letter-spacing:0.05em;
+    text-transform:uppercase; transition:color 0.2s;
+  }
+  .mobile-menu a:hover { color:var(--gold); }
+  .mobile-tiktok {
+    display:flex; align-items:center; gap:8px;
+    background:var(--tiktok); color:#fff;
+    padding:12px 24px; margin-top:1rem;
+    font-family:'Syne', sans-serif; font-weight:700;
+    font-size:14px; letter-spacing:0.08em;
+    text-decoration:none; text-transform:uppercase;
+  }
+
+  /* MAIN */
+  main { position:relative; z-index:1; }
+
+  /* HERO */
+  .hero {
+    min-height:100vh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:8rem 1.5rem 5rem;
+    position:relative; overflow:hidden;
+  }
+  .hero::before {
+    content:''; position:absolute; top:-200px; left:50%; transform:translateX(-50%);
+    width:min(800px, 100vw); height:min(800px, 100vw);
+    background:radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .hero-tag {
+    font-family:'DM Mono', monospace; font-size:10px; letter-spacing:0.25em;
+    text-transform:uppercase; color:var(--gold);
+    border:1px solid var(--border); padding:6px 16px; border-radius:2px;
+    margin-bottom:2.5rem; display:inline-block;
+  }
+  .hero h1 {
+    font-family:'Syne', sans-serif; font-weight:800;
+    font-size:clamp(2.6rem,7vw,6.5rem); line-height:0.95;
+    letter-spacing:-0.03em; margin-bottom:1.5rem; max-width:900px;
+  }
+  .hero h1 em { font-style:normal; color:var(--gold); }
+  .hero-sub { font-size:clamp(15px,2.5vw,18px); color:var(--muted); max-width:540px; line-height:1.7; margin-bottom:2.5rem; }
+  .hero-cta { display:flex; gap:1rem; align-items:center; flex-wrap:wrap; justify-content:center; }
+
+  .btn-primary {
+    background:var(--gold); color:var(--black);
+    padding:14px 28px; font-family:'Syne', sans-serif; font-weight:700;
+    font-size:12px; letter-spacing:0.1em; text-transform:uppercase;
+    border:none; cursor:pointer; text-decoration:none; display:inline-block;
+    clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);
+    transition:background 0.2s; min-height:44px; display:inline-flex; align-items:center;
+  }
+  .btn-primary:hover { background:var(--gold-light); }
+
+  .btn-ghost {
+    border:1px solid var(--border); color:var(--text);
+    padding:13px 28px; font-family:'Syne', sans-serif; font-weight:600;
+    font-size:12px; letter-spacing:0.1em; text-transform:uppercase;
+    cursor:pointer; text-decoration:none; display:inline-flex; align-items:center;
+    transition:border-color 0.2s, color 0.2s; min-height:44px;
+  }
+  .btn-ghost:hover { border-color:var(--gold); color:var(--gold); }
+
+  /* TICKER */
+  .ticker-wrap {
+    border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+    overflow:hidden; padding:11px 0; background:rgba(201,168,76,0.03);
+  }
+  .ticker { display:flex; gap:3.5rem; animation:tick 30s linear infinite; white-space:nowrap; }
+  .ticker-item { font-family:'DM Mono', monospace; font-size:11px; letter-spacing:0.1em; color:var(--gold); display:flex; align-items:center; gap:7px; }
+  .ticker-item .up { color:var(--accent); }
+  @keyframes tick { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+  /* SECTIONS */
+  .section-wrap { max-width:1200px; margin:0 auto; padding:5rem 1.5rem; }
+  .section-label {
+    font-family:'DM Mono', monospace; font-size:10px; letter-spacing:0.3em;
+    text-transform:uppercase; color:var(--gold); margin-bottom:1rem;
+    display:flex; align-items:center; gap:10px;
+  }
+  .section-label::before { content:''; width:28px; height:1px; background:var(--gold); }
+  .section-title { font-family:'Syne', sans-serif; font-weight:800; font-size:clamp(1.8rem,4vw,3.5rem); line-height:1.05; letter-spacing:-0.02em; margin-bottom:1.2rem; }
+  .section-title span { color:var(--gold); }
+  .section-desc { font-size:16px; color:var(--muted); max-width:580px; line-height:1.8; }
+
+  /* STATS */
+  .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin-top:4rem; }
+  .stat-card { background:var(--surface); padding:2rem 1.5rem; position:relative; overflow:hidden; }
+  .stat-card::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; background:linear-gradient(90deg, var(--gold) 0%, transparent 100%); }
+  .stat-number { font-family:'Syne', sans-serif; font-weight:800; font-size:clamp(1.8rem,3vw,3rem); color:var(--gold); line-height:1; margin-bottom:0.4rem; }
+  .stat-label { font-size:12px; color:var(--muted); letter-spacing:0.05em; text-transform:uppercase; }
+
+  /* IDENTITY */
+  .identity-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); margin-top:3.5rem; }
+  .identity-cell { background:var(--surface); padding:2rem; }
+  .identity-cell.accent { background:linear-gradient(135deg,rgba(201,168,76,0.06) 0%,var(--surface) 100%); }
+  .identity-cell-icon { font-family:'DM Mono', monospace; font-size:10px; color:var(--gold); letter-spacing:0.2em; margin-bottom:1.2rem; display:flex; align-items:center; gap:8px; }
+  .identity-cell-icon::before { content:''; width:22px; height:22px; border:1px solid var(--gold); display:block; flex-shrink:0; }
+  .identity-cell h3 { font-family:'Syne', sans-serif; font-weight:700; font-size:clamp(1.1rem,2vw,1.3rem); margin-bottom:0.8rem; line-height:1.2; }
+  .identity-cell p { color:var(--muted); font-size:14px; line-height:1.8; }
+
+  /* PILLARS */
+  .pillars-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:3.5rem; }
+  .pillar { border:1px solid var(--border); background:var(--surface); padding:2rem; position:relative; overflow:hidden; transition:border-color 0.3s; }
+  .pillar:hover { border-color:var(--gold); }
+  .pillar-number { font-family:'DM Mono', monospace; font-size:10px; color:var(--gold); letter-spacing:0.2em; margin-bottom:1.2rem; }
+  .pillar h3 { font-family:'Syne', sans-serif; font-weight:700; font-size:clamp(1rem,2vw,1.2rem); margin-bottom:0.8rem; }
+  .pillar p { color:var(--muted); font-size:14px; line-height:1.8; }
+  .pillar-corner { position:absolute; bottom:0;right:0; width:50px; height:50px; border-top:1px solid var(--border); border-left:1px solid var(--border); }
+
+  /* OWNER CONTACT SECTION */
+  .owner-section {
+    background:linear-gradient(135deg, rgba(255,0,80,0.06) 0%, rgba(201,168,76,0.06) 100%);
+    border:1px solid rgba(255,0,80,0.25);
+    padding:3rem;
+    margin-top:4rem;
+    position:relative; overflow:hidden;
+  }
+  .owner-section::after {
+    content:''; position:absolute; top:-60px; right:-60px;
+    width:200px; height:200px;
+    background:radial-gradient(circle, rgba(255,0,80,0.06) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .owner-layout { display:grid; grid-template-columns:auto 1fr auto; gap:2rem; align-items:center; }
+  .owner-avatar {
+    width:80px; height:80px; flex-shrink:0;
+    background:linear-gradient(135deg, var(--tiktok) 0%, #ff6b9d 100%);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Syne', sans-serif; font-weight:800; font-size:28px;
+    color:#fff; border-radius:50%;
+    border:2px solid rgba(255,0,80,0.4);
+  }
+  .owner-info-badge {
+    font-family:'DM Mono', monospace; font-size:10px; letter-spacing:0.25em;
+    text-transform:uppercase; color:var(--tiktok); margin-bottom:0.5rem;
+    display:flex; align-items:center; gap:8px;
+  }
+  .owner-info-badge::before { content:''; width:20px; height:1px; background:var(--tiktok); }
+  .owner-name { font-family:'Syne', sans-serif; font-weight:800; font-size:clamp(1.2rem,2vw,1.6rem); margin-bottom:0.3rem; }
+  .owner-role { font-size:14px; color:var(--muted); margin-bottom:0.8rem; }
+  .owner-desc { font-size:14px; color:var(--muted); line-height:1.8; max-width:480px; }
+  .tiktok-contact-btn {
+    display:flex; align-items:center; gap:10px;
+    background:var(--tiktok); color:#fff;
+    padding:14px 24px; text-decoration:none;
+    font-family:'Syne', sans-serif; font-weight:700;
+    font-size:13px; letter-spacing:0.08em; text-transform:uppercase;
+    white-space:nowrap; transition:opacity 0.2s;
+    clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);
+    min-height:44px;
+  }
+  .tiktok-contact-btn:hover { opacity:0.85; }
+  .tiktok-contact-btn svg { width:18px; height:18px; flex-shrink:0; }
+
+  /* LOGO SECTION */
+  .logo-showcase { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:3.5rem; align-items:start; }
+  .logo-display { border:1px solid var(--border); background:var(--surface); padding:3rem 2rem; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:1.5rem; }
+  .logo-display.light-bg { background:#F2EFE8; }
+  .logo-display.light-bg .logo-wordmark, .logo-display.light-bg .logo-sub { color:var(--black); }
+  .big-logo { display:flex; align-items:center; gap:14px; }
+  .big-logo-mark {
+    width:52px; height:52px; flex-shrink:0;
+    background:linear-gradient(135deg, var(--gold) 0%, var(--gold-dim) 100%);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Syne', sans-serif; font-weight:800; font-size:26px; color:var(--black);
+    clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+  }
+  .logo-wordmark { font-family:'Syne', sans-serif; font-weight:800; font-size:20px; color:var(--text); line-height:1.1; }
+  .logo-sub { font-family:'DM Mono', monospace; font-size:9px; letter-spacing:0.3em; color:var(--gold); text-transform:uppercase; }
+  .logo-rules { display:flex; flex-direction:column; gap:14px; }
+  .logo-rule { border:1px solid var(--border); background:var(--surface); padding:1.3rem; }
+  .logo-rule h4 { font-family:'Syne', sans-serif; font-weight:700; font-size:13px; margin-bottom:6px; color:var(--gold); }
+  .logo-rule p { font-size:13px; color:var(--muted); line-height:1.7; }
+
+  /* COLOR PALETTE */
+  .color-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-top:2.5rem; }
+  .color-swatch { cursor:pointer; transition:transform 0.2s; }
+  .color-swatch:hover { transform:translateY(-4px); }
+  .swatch-block { height:70px; border:1px solid var(--border); }
+  .swatch-info { padding:10px 0 0; }
+  .swatch-name { font-family:'Syne', sans-serif; font-weight:700; font-size:12px; }
+  .swatch-hex { font-family:'DM Mono', monospace; font-size:10px; color:var(--muted); margin-top:3px; }
+
+  /* TYPOGRAPHY */
+  .type-showcase { border:1px solid var(--border); background:var(--surface); padding:2.5rem; margin-top:2.5rem; }
+  .type-row { padding:1.5rem 0; border-bottom:1px solid var(--border-soft); }
+  .type-row:last-child { border-bottom:none; }
+  .type-meta { font-family:'DM Mono', monospace; font-size:10px; color:var(--muted); letter-spacing:0.15em; margin-bottom:0.8rem; text-transform:uppercase; }
+
+  /* VOICE */
+  .voice-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin-top:3.5rem; }
+  .voice-cell { background:var(--surface); padding:2rem; }
+  .voice-cell-marker { width:30px; height:30px; border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:'Syne', sans-serif; font-weight:800; font-size:15px; color:var(--gold); margin-bottom:1.2rem; }
+  .voice-cell h3 { font-family:'Syne', sans-serif; font-weight:700; font-size:1.05rem; margin-bottom:0.8rem; }
+  .voice-cell p { font-size:13px; color:var(--muted); line-height:1.8; }
+  .do-dont { display:flex; flex-direction:column; gap:7px; margin-top:1.2rem; }
+  .do-item, .dont-item { font-size:11px; font-family:'DM Mono', monospace; padding:5px 9px; border-left:2px solid; }
+  .do-item { border-color:var(--accent); color:var(--accent); background:var(--accent-dim); }
+  .dont-item { border-color:var(--danger); color:var(--danger); background:rgba(255,79,79,0.08); }
+
+  /* TOKEN */
+  .token-layout { display:grid; grid-template-columns:1.2fr 0.8fr; gap:28px; margin-top:3.5rem; align-items:start; }
+  .token-main { border:1px solid var(--gold); background:linear-gradient(135deg,rgba(201,168,76,0.06) 0%,var(--surface) 100%); padding:2.5rem; position:relative; overflow:hidden; }
+  .token-main::after { content:'PCC'; position:absolute; bottom:-20px; right:-10px; font-family:'Syne', sans-serif; font-weight:800; font-size:100px; color:rgba(201,168,76,0.04); letter-spacing:-0.05em; pointer-events:none; }
+  .token-symbol { width:72px; height:72px; background:linear-gradient(135deg,var(--gold) 0%,var(--gold-dim) 100%); display:flex; align-items:center; justify-content:center; font-family:'Syne', sans-serif; font-weight:800; font-size:30px; color:var(--black); clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); margin-bottom:1.5rem; }
+  .token-main h3 { font-family:'Syne', sans-serif; font-weight:800; font-size:1.8rem; margin-bottom:0.8rem; }
+  .token-main > p { color:var(--muted); font-size:14px; line-height:1.8; }
+  .token-stats { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); margin-top:1.8rem; }
+  .token-stat { background:var(--panel); padding:1.2rem; }
+  .token-stat-value { font-family:'Syne', sans-serif; font-weight:800; font-size:1.6rem; color:var(--gold); line-height:1; margin-bottom:5px; }
+  .token-stat-label { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; }
+  .token-sidebar { display:flex; flex-direction:column; gap:14px; }
+  .token-feature { border:1px solid var(--border); background:var(--surface); padding:1.3rem; transition:border-color 0.2s; }
+  .token-feature:hover { border-color:var(--gold); }
+  .token-feature h4 { font-family:'Syne', sans-serif; font-weight:700; font-size:13px; margin-bottom:6px; color:var(--gold); }
+  .token-feature p { font-size:13px; color:var(--muted); line-height:1.7; }
+
+  /* MESSAGING */
+  .headline-card { border:1px solid var(--border); background:var(--surface); padding:2rem 2.5rem; margin-bottom:14px; transition:border-color 0.2s; }
+  .headline-card:hover { border-color:var(--gold); }
+  .headline-card.primary { background:linear-gradient(135deg,rgba(201,168,76,0.08) 0%,var(--surface) 100%); border-color:var(--gold); }
+  .headline-card .headline-type { font-family:'DM Mono', monospace; font-size:9px; letter-spacing:0.3em; color:var(--gold); text-transform:uppercase; margin-bottom:0.8rem; }
+  .headline-card .headline-text { font-family:'Syne', sans-serif; font-weight:700; font-size:clamp(1.1rem,2vw,1.5rem); line-height:1.2; }
+  .headline-card.secondary .headline-text { font-size:clamp(1rem,1.5vw,1.2rem); color:var(--muted); font-weight:600; }
+
+  /* SOCIAL PROOF */
+  .testimonials { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:3.5rem; }
+  .testimonial { border:1px solid var(--border); background:var(--surface); padding:1.8rem; transition:border-color 0.2s; }
+  .testimonial:hover { border-color:var(--gold); }
+  .testimonial-header { display:flex; align-items:center; gap:10px; margin-bottom:1.2rem; }
+  .testimonial-avatar { width:38px; height:38px; background:linear-gradient(135deg,var(--gold-dim) 0%,var(--gold) 100%); display:flex; align-items:center; justify-content:center; font-family:'Syne', sans-serif; font-weight:700; font-size:13px; color:var(--black); flex-shrink:0; }
+  .testimonial-name { font-family:'Syne', sans-serif; font-weight:700; font-size:13px; }
+  .testimonial-role { font-size:11px; color:var(--muted); }
+  .testimonial-stars { display:flex; gap:3px; margin-bottom:0.8rem; }
+  .star { width:11px; height:11px; background:var(--gold); clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); }
+  .testimonial-text { font-size:13px; color:var(--muted); line-height:1.8; }
+  .testimonial-amount { margin-top:1.2rem; padding-top:0.8rem; border-top:1px solid var(--border-soft); font-family:'DM Mono', monospace; font-size:11px; color:var(--accent); }
+
+  /* LIVE FEED */
+  .live-feed { border:1px solid var(--border); background:var(--surface); overflow:hidden; margin-top:3.5rem; }
+  .live-feed-header { padding:1.2rem 1.8rem; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; }
+  .live-feed-title { font-family:'Syne', sans-serif; font-weight:700; font-size:13px; display:flex; align-items:center; gap:8px; }
+  .live-badge { font-family:'DM Mono', monospace; font-size:9px; letter-spacing:0.2em; color:var(--accent); border:1px solid var(--accent); padding:3px 7px; display:flex; align-items:center; gap:5px; }
+  .feed-rows { max-height:300px; overflow:hidden; }
+  .feed-row { padding:12px 1.8rem; border-bottom:1px solid var(--border-soft); display:flex; align-items:center; justify-content:space-between; font-size:12px; gap:8px; animation:slideIn 0.4s ease; flex-wrap:wrap; }
+  @keyframes slideIn { from{opacity:0;transform:translateX(-8px)} to{opacity:1;transform:translateX(0)} }
+  .feed-user { color:var(--muted); font-family:'DM Mono', monospace; flex-shrink:0; }
+  .feed-action { color:var(--text); flex:1; }
+  .feed-amount { color:var(--accent); font-family:'DM Mono', monospace; font-weight:500; flex-shrink:0; }
+  .feed-time { color:var(--muted); font-size:10px; font-family:'DM Mono', monospace; flex-shrink:0; }
+
+  /* SECURITY */
+  .security-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin-top:2.5rem; }
+  .security-cell { background:var(--surface); padding:1.8rem; }
+  .security-icon { width:36px; height:36px; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; margin-bottom:1.2rem; font-family:'DM Mono', monospace; font-size:15px; color:var(--gold); }
+  .security-cell h4 { font-family:'Syne', sans-serif; font-weight:700; font-size:13px; margin-bottom:7px; }
+  .security-cell p { font-size:13px; color:var(--muted); line-height:1.7; }
+
+  /* DIVIDER */
+  .section-divider { max-width:1200px; margin:0 auto; padding:0 1.5rem; }
+  .section-divider hr { border:none; border-top:1px solid var(--border); }
+
+  /* FOOTER */
+  footer { border-top:1px solid var(--border); padding:3.5rem 1.5rem 2.5rem; max-width:1200px; margin:0 auto; }
+  .footer-top { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:3rem; margin-bottom:2.5rem; padding-bottom:2.5rem; border-bottom:1px solid var(--border-soft); }
+  .footer-brand p { font-size:13px; color:var(--muted); line-height:1.8; margin-top:1.2rem; max-width:300px; }
+  .footer-tiktok-link {
+    display:inline-flex; align-items:center; gap:8px;
+    margin-top:1.2rem; padding:10px 18px;
+    background:var(--tiktok); color:#fff;
+    font-family:'Syne', sans-serif; font-weight:700;
+    font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    text-decoration:none; transition:opacity 0.2s;
+  }
+  .footer-tiktok-link:hover { opacity:0.85; }
+  .footer-col h4 { font-family:'Syne', sans-serif; font-weight:700; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:1.2rem; }
+  .footer-col a { display:block; font-size:13px; color:var(--muted); text-decoration:none; margin-bottom:9px; transition:color 0.2s; }
+  .footer-col a:hover { color:var(--text); }
+  .footer-bottom { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+  .footer-copy { font-family:'DM Mono', monospace; font-size:10px; color:var(--muted); letter-spacing:0.05em; }
+  .footer-legal { font-size:12px; color:var(--muted); display:flex; gap:1.5rem; flex-wrap:wrap; }
+  .footer-legal a { color:var(--muted); text-decoration:none; transition:color 0.2s; }
+  .footer-legal a:hover { color:var(--gold); }
+
+  /* FLOATING TIKTOK BUTTON */
+  .float-tiktok {
+    position:fixed; bottom:24px; right:20px; z-index:90;
+    display:flex; align-items:center; gap:8px;
+    background:var(--tiktok); color:#fff;
+    padding:12px 18px;
+    font-family:'Syne', sans-serif; font-weight:700;
+    font-size:12px; letter-spacing:0.06em; text-transform:uppercase;
+    text-decoration:none;
+    box-shadow:0 4px 24px rgba(255,0,80,0.35);
+    clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);
+    transition:opacity 0.2s, transform 0.2s;
+    animation:floatIn 0.5s ease 1s both;
+  }
+  .float-tiktok:hover { opacity:0.9; transform:translateY(-2px); }
+  @keyframes floatIn { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+  /* RESPONSIVE */
+  @media (max-width:1024px) {
+    .nav-links { display:none; }
+    .hamburger { display:flex; }
+    .nav-tiktok-btn { display:none; }
+    .stats-grid { grid-template-columns:repeat(2,1fr); }
+    .footer-top { grid-template-columns:1fr 1fr; }
+  }
+
+  @media (max-width:768px) {
+    :root { --nav-h:56px; }
+    nav { padding:0 1rem; }
+    .identity-grid { grid-template-columns:1fr; }
+    .pillars-grid { grid-template-columns:1fr; }
+    .logo-showcase { grid-template-columns:1fr; }
+    .color-grid { grid-template-columns:repeat(3,1fr); }
+    .voice-grid { grid-template-columns:1fr; }
+    .token-layout { grid-template-columns:1fr; }
+    .testimonials { grid-template-columns:1fr; }
+    .security-grid { grid-template-columns:1fr; }
+    .footer-top { grid-template-columns:1fr; gap:2rem; }
+    .owner-layout { grid-template-columns:1fr; text-align:center; }
+    .owner-avatar { margin:0 auto; }
+    .owner-info-badge { justify-content:center; }
+    .owner-info-badge::before { display:none; }
+    .tiktok-contact-btn { margin:0 auto; justify-content:center; }
+    .section-wrap { padding:3.5rem 1rem; }
+    .owner-section { padding:2rem; }
+    .hero { padding:7rem 1rem 4rem; }
+    .float-tiktok { bottom:16px; right:14px; padding:10px 14px; font-size:11px; }
+    .feed-row { flex-wrap:nowrap; }
+    .feed-action { display:none; }
+  }
+
+  @media (max-width:480px) {
+    .stats-grid { grid-template-columns:1fr 1fr; }
+    .color-grid { grid-template-columns:repeat(2,1fr); }
+    .hero h1 { font-size:2.4rem; }
+    .type-showcase { padding:1.5rem; }
+  }
+
+  /* TOUCH DEVICES */
+  @media (hover:none) {
+    .pillar:hover, .token-feature:hover, .testimonial:hover, .headline-card:hover { border-color:var(--border); }
+    .color-swatch:hover { transform:none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LANGUAGE BANNER -->
+<div class="lang-banner" id="lang-banner">
+  <span class="lang-banner-text" id="lang-banner-text">🌐 Switching to Spanish based on your region — ¿Cambiar al español?</span>
+  <div class="lang-toggle-btns">
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
+  </div>
+  <button class="lang-banner-close" onclick="document.getElementById('lang-banner').style.display='none'">×</button>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">P</div>
+    <div class="nav-logo-text">
+      Profit Command Center
+      <span>Ltd · Est. 2024</span>
+    </div>
+  </a>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#identity" data-t="nav_identity">Identity</a></li>
+    <li><a href="#voice" data-t="nav_voice">Voice</a></li>
+    <li><a href="#visuals" data-t="nav_visuals">Visuals</a></li>
+    <li><a href="#messaging" data-t="nav_messaging">Messaging</a></li>
+    <li><a href="#token" data-t="nav_token">Token</a></li>
+    <li><a href="#contact" data-t="nav_contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <a href="https://www.tiktok.com/@chelseamccintoshx?_r=1&_t=ZS-95eWjNTpzIe" target="_blank" rel="noopener" class="nav-tiktok-btn">
+      <svg class="tiktok-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.19 8.19 0 0 0 4.79 1.52V6.76a4.85 4.85 0 0 1-1.02-.07z"/>
+      </svg>
+      <span data-t="nav_tiktok">Contact Owner</span>
+    </a>
+    <div class="nav-status">
+      <div class="status-dot"></div>
+      <span data-t="nav_status">SYSTEM ACTIVE</span>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#identity" onclick="toggleMenu()" data-t="nav_identity">Identity</a>
+  <a href="#voice" onclick="toggleMenu()" data-t="nav_voice">Voice</a>
+  <a href="#visuals" onclick="toggleMenu()" data-t="nav_visuals">Visuals</a>
+  <a href="#messaging" onclick="toggleMenu()" data-t="nav_messaging">Messaging</a>
+  <a href="#token" onclick="toggleMenu()" data-t="nav_token">Token</a>
+  <a href="#contact" onclick="toggleMenu()" data-t="nav_contact">Contact</a>
+  <a href="https://www.tiktok.com/@chelseamccintoshx?_r=1&_t=ZS-95eWjNTpzIe" target="_blank" rel="noopener" class="mobile-tiktok">
+    <svg style="width:18px;height:18px;" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.19 8.19 0 0 0 4.79 1.52V6.76a4.85 4.85 0 0 1-1.02-.07z"/>
+    </svg>
+    <span data-t="contact_tiktok_btn">Contact on TikTok</span>
+  </a>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section id="hero" style="max-width:100%;padding:0;position:relative;overflow:hidden;">
+  <div class="hero">
+    <div class="hero-tag" data-t="hero_tag">Official Brand Standards Document · 2024</div>
+    <h1 data-t="hero_h1_html">The <em>Definitive</em><br>Command Standard</h1>
+    <p class="hero-sub" data-t="hero_sub">Profit Command Center Ltd sets the global benchmark for automated capital generation. This document governs our visual identity, voice, and strategic narrative.</p>
+    <div class="hero-cta">
+      <a href="#identity" class="btn-primary" data-t="hero_cta1">Explore Standards</a>
+      <a href="#token" class="btn-ghost" data-t="hero_cta2">View PCC Token</a>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <div class="ticker-item">PCC/USD <span class="up">↑ 4.82%</span> · $2.847</div>
+    <div class="ticker-item">Active Clients <span class="up">↑ 1,240</span> · 847K Total</div>
+    <div class="ticker-item">Daily Volume <span class="up">$18.4M</span></div>
+    <div class="ticker-item">TVL <span class="up">$1.2B+</span></div>
+    <div class="ticker-item">Uptime <span class="up">99.99%</span></div>
+    <div class="ticker-item">PCC/BTC <span class="up">↑ 2.17%</span></div>
+    <div class="ticker-item">Verified Returns <span class="up">↑ 340%</span> YTD</div>
+    <div class="ticker-item">System Status <span class="up">● OPERATIONAL</span></div>
+    <div class="ticker-item">PCC/USD <span class="up">↑ 4.82%</span> · $2.847</div>
+    <div class="ticker-item">Active Clients <span class="up">↑ 1,240</span> · 847K Total</div>
+    <div class="ticker-item">Daily Volume <span class="up">$18.4M</span></div>
+    <div class="ticker-item">TVL <span class="up">$1.2B+</span></div>
+    <div class="ticker-item">Uptime <span class="up">99.99%</span></div>
+    <div class="ticker-item">Verified Returns <span class="up">↑ 340%</span> YTD</div>
+    <div class="ticker-item">System Status <span class="up">● OPERATIONAL</span></div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="section-wrap" id="intro">
+  <div class="section-label" data-t="stats_label">Performance Metrics</div>
+  <div class="section-title" data-t="stats_title_html">Numbers That<br>Command <span>Attention</span></div>
+  <p class="section-desc" data-t="stats_desc">Real-time data from our automated capital engine — transparent, verifiable, and continuously updated.</p>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-number">$1.2B+</div><div class="stat-label" data-t="stat1">Total Value Locked</div></div>
+    <div class="stat-card"><div class="stat-number">847K</div><div class="stat-label" data-t="stat2">Verified Members</div></div>
+    <div class="stat-card"><div class="stat-number">340%</div><div class="stat-label" data-t="stat3">Average YTD Return</div></div>
+    <div class="stat-card"><div class="stat-number">99.99%</div><div class="stat-label" data-t="stat4">System Uptime</div></div>
+  </div>
+</div>
+
+<div class="section-divider"><hr></div>
+
+<!-- IDENTITY -->
+<div class="section-wrap" id="identity">
+  <div class="section-label" data-t="identity_label">Core Identity</div>
+  <div class="section-title" data-t="identity_title_html">Who We <span>Are</span></div>
+  <p class="section-desc" data-t="identity_desc">The fundamental principles that govern our purpose, vision, and uncompromising standard of operational excellence.</p>
+
+  <div class="identity-grid">
+    <div class="identity-cell accent">
+      <div class="identity-cell-icon">01 · <span data-t="id_mission_label">MISSION</span></div>
+      <h3 data-t="id_mission_h">The Definitive Mission</h3>
+      <p data-t="id_mission_p">To empower clients with a cutting-edge automated platform that consistently captures maximum yield from high-growth market cycles — delivering exclusive access to exponential wealth generation on complete autopilot.</p>
+    </div>
+    <div class="identity-cell">
+      <div class="identity-cell-icon">02 · <span data-t="id_vision_label">VISION</span></div>
+      <h3 data-t="id_vision_h">Future Vision</h3>
+      <p data-t="id_vision_p">To become the world's most recognized automated FinTech command platform — defining the new standard for efficient, high-performance capital generation for the modern investor.</p>
+    </div>
+    <div class="identity-cell">
+      <div class="identity-cell-icon">03 · <span data-t="id_ethics_label">ETHICS</span></div>
+      <h3 data-t="id_ethics_h">Ethical Mandate</h3>
+      <p data-t="id_ethics_p">We prioritize unwavering transparency in our automated mechanics and performance metrics. Integrity and security are the cornerstones of every technological implementation we deploy.</p>
+    </div>
+    <div class="identity-cell accent">
+      <div class="identity-cell-icon">04 · <span data-t="id_pos_label">POSITION</span></div>
+      <h3 data-t="id_pos_h">Market Position</h3>
+      <p data-t="id_pos_p">Profit Command Center Ltd occupies the apex of automated capital technology. We do not compete — we set the benchmark against which all others are measured.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:4rem;">
+    <div class="section-label" data-t="pillars_label">Value Pillars</div>
+    <div class="section-title" style="font-size:clamp(1.8rem,3vw,2.4rem);" data-t="pillars_title_html">Four Pillars of <span>Command</span></div>
+  </div>
+
+  <div class="pillars-grid">
+    <div class="pillar">
+      <div class="pillar-number">PILLAR · 01</div>
+      <h3 data-t="p1_h">The Automated Profit Engine</h3>
+      <p data-t="p1_p">Our proprietary system operates 24/7 autonomously, identifying and executing optimal trades. Technology handles the heavy lifting — reliably converting minimum initial capital into substantial, verifiable returns.</p>
+      <div class="pillar-corner"></div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-number">PILLAR · 02</div>
+      <h3 data-t="p2_h">Market Timing Dominance</h3>
+      <p data-t="p2_p">Our algorithms are calibrated specifically for high-growth economic periods. We bypass market sentiment, leveraging advanced data analysis to perfectly position clients to capitalize on bullish trends.</p>
+      <div class="pillar-corner"></div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-number">PILLAR · 03</div>
+      <h3 data-t="p3_h">Quantifiable Results Only</h3>
+      <p data-t="p3_p">We replace speculation with concrete outcomes. Our platform is built on proven, live trading results — consistently demonstrating the capacity to multiply investments exponentially over defined time horizons.</p>
+      <div class="pillar-corner"></div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-number">PILLAR · 04</div>
+      <h3 data-t="p4_h">Securing Financial Autonomy</h3>
+      <p data-t="p4_p">Profit Command Center is more than an investment tool — it is a vehicle for achieving substantial financial independence. We provide the technology that empowers clients to command their economic destiny.</p>
+      <div class="pillar-corner"></div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"><hr></div>
+
+<!-- VOICE -->
+<div class="section-wrap" id="voice">
+  <div class="section-label" data-t="voice_label">Brand Voice</div>
+  <div class="section-title" data-t="voice_title_html">The Command <span>Persona</span></div>
+  <p class="section-desc" data-t="voice_desc">Our voice is decisive, data-driven, and uncompromising. Every communication reinforces our position as the apex capital generation platform.</p>
+  <div class="voice-grid">
+    <div class="voice-cell">
+      <div class="voice-cell-marker">A</div>
+      <h3 data-t="v1_h">Decisive &amp; Forward-Looking</h3>
+      <p data-t="v1_p">We demand attention by emphasizing urgency and momentum. Our language drives immediate, informed action to seize time-sensitive market opportunities before they close.</p>
+      <div class="do-dont">
+        <div class="do-item" data-t="v1_do">DO: "Act now — the window is open."</div>
+        <div class="dont-item" data-t="v1_dont">DON'T: "You might want to consider..."</div>
+      </div>
+    </div>
+    <div class="voice-cell">
+      <div class="voice-cell-marker">B</div>
+      <h3 data-t="v2_h">Quantifiable &amp; Data-Backed</h3>
+      <p data-t="v2_p">Every claim centers on demonstrable results. We eliminate jargon and prioritize specific, achievable, verifiable financial metrics that clients can hold us to.</p>
+      <div class="do-dont">
+        <div class="do-item" data-t="v2_do">DO: "340% verified YTD return."</div>
+        <div class="dont-item" data-t="v2_dont">DON'T: "We aim for good results."</div>
+      </div>
+    </div>
+    <div class="voice-cell">
+      <div class="voice-cell-marker">C</div>
+      <h3 data-t="v3_h">Aspirational &amp; Exclusive</h3>
+      <p data-t="v3_p">Our tone resonates with individuals committed to high-level wealth generation. Profit Command Center is the elite tool for ambitious investors who do not settle for average.</p>
+      <div class="do-dont">
+        <div class="do-item" data-t="v3_do">DO: "Reserved for decisive investors."</div>
+        <div class="dont-item" data-t="v3_dont">DON'T: "Open to everyone, no limits."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"><hr></div>
+
+<!-- VISUALS -->
+<div class="section-wrap" id="visuals">
+  <div class="section-label" data-t="visuals_label">Visual Standards</div>
+  <div class="section-title" data-t="visuals_title_html">Identity by <span>Design</span></div>
+  <p class="section-desc" data-t="visuals_desc">Our visual language is minimal, authoritative, and precise — reflecting our commitment to automated accuracy and financial command.</p>
+
+  <div style="margin-top:2.5rem;">
+    <div class="section-label" data-t="logo_label">Logomark System</div>
+  </div>
+
+  <div class="logo-showcase">
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div class="logo-display" style="background:var(--deep);">
+        <div class="big-logo">
+          <div class="big-logo-mark">P</div>
+          <div>
+            <div class="logo-wordmark">Profit Command Center</div>
+            <div class="logo-sub">Ltd · Command Your Capital</div>
+          </div>
+        </div>
+        <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);" data-t="logo_dark_label">Primary — Dark Background</div>
+      </div>
+      <div class="logo-display light-bg">
+        <div class="big-logo">
+          <div class="big-logo-mark">P</div>
+          <div>
+            <div class="logo-wordmark">Profit Command Center</div>
+            <div class="logo-sub">Ltd · Command Your Capital</div>
+          </div>
+        </div>
+        <div style="font-family:'DM Mono',monospace;font-size:10px;color:#666;" data-t="logo_light_label">Inverted — Light Background</div>
+      </div>
+    </div>
+    <div class="logo-rules">
+      <div class="logo-rule"><h4 data-t="lr1_h">Logomark Concept</h4><p data-t="lr1_p">The hexagonal 'P' mark fuses geometric precision with upward momentum — communicating efficiency, command, and flawless execution in one symbol.</p></div>
+      <div class="logo-rule"><h4 data-t="lr2_h">Clear Space Rule</h4><p data-t="lr2_p">Maintain minimum clear space equal to the full width of the 'P' mark on all sides. Minimum digital size: 48px wide.</p></div>
+      <div class="logo-rule"><h4 data-t="lr3_h">Usage Prohibitions</h4><p data-t="lr3_p">Never stretch, distort, recolor, or apply drop shadows to the mark. Gold on black or black on gold only.</p></div>
+      <div class="logo-rule"><h4 data-t="lr4_h">Typography Pairing</h4><p data-t="lr4_p">Wordmark uses Syne ExtraBold exclusively. Tagline uses DM Mono Light with 0.35em letter-spacing.</p></div>
+    </div>
+  </div>
+
+  <!-- COLORS -->
+  <div style="margin-top:4rem;">
+    <div class="section-label" data-t="color_label">Official Color Palette</div>
+    <p style="color:var(--muted);font-size:14px;max-width:560px;margin-top:0.5rem;" data-t="color_desc">Click any swatch to copy the hex code to your clipboard.</p>
+  </div>
+  <div class="color-grid">
+    <div class="color-swatch" onclick="copyColor(this,'#C9A84C')"><div class="swatch-block" style="background:#C9A84C;"></div><div class="swatch-info"><div class="swatch-name" data-t="c1_name">Command Gold</div><div class="swatch-hex">#C9A84C · Primary</div></div></div>
+    <div class="color-swatch" onclick="copyColor(this,'#050608')"><div class="swatch-block" style="background:#050608;border-color:rgba(255,255,255,0.1);"></div><div class="swatch-info"><div class="swatch-name" data-t="c2_name">Command Black</div><div class="swatch-hex">#050608 · Base</div></div></div>
+    <div class="color-swatch" onclick="copyColor(this,'#0F1116')"><div class="swatch-block" style="background:#0F1116;border-color:rgba(255,255,255,0.08);"></div><div class="swatch-info"><div class="swatch-name" data-t="c3_name">Surface Dark</div><div class="swatch-hex">#0F1116 · Surface</div></div></div>
+    <div class="color-swatch" onclick="copyColor(this,'#00D4AA')"><div class="swatch-block" style="background:#00D4AA;"></div><div class="swatch-info"><div class="swatch-name" data-t="c4_name">Signal Green</div><div class="swatch-hex">#00D4AA · Positive</div></div></div>
+    <div class="color-swatch" onclick="copyColor(this,'#FF4F4F')"><div class="swatch-block" style="background:#FF4F4F;"></div><div class="swatch-info"><div class="swatch-name" data-t="c5_name">Alert Red</div><div class="swatch-hex">#FF4F4F · Alert</div></div></div>
+  </div>
+
+  <!-- TYPOGRAPHY -->
+  <div style="margin-top:4rem;"><div class="section-label" data-t="type_label">Typography System</div></div>
+  <div class="type-showcase">
+    <div class="type-row"><div class="type-meta">SYNE EXTRABOLD · 800 · DISPLAY</div><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,48px);line-height:1;letter-spacing:-0.03em;" data-t="type_display">Command the Market.</div></div>
+    <div class="type-row"><div class="type-meta">SYNE BOLD · 700 · HEADING</div><div style="font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.2rem,3vw,28px);line-height:1.2;" data-t="type_heading">Automated. Precise. Unstoppable.</div></div>
+    <div class="type-row"><div class="type-meta">DM SANS REGULAR · 400 · BODY</div><div style="font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.8;color:var(--muted);max-width:560px;" data-t="type_body">Our platform translates initial capital into compounding returns through proprietary algorithmic execution — designed for investors who demand measurable, auditable performance.</div></div>
+    <div class="type-row"><div class="type-meta">DM MONO · 400 · TECHNICAL / UI</div><div style="font-family:'DM Mono',monospace;font-size:13px;color:var(--gold);letter-spacing:0.1em;">PCC/USD · $2.847 · +4.82% · TVL: $1.2B · SYSTEM: ACTIVE</div></div>
+  </div>
+</div>
+
+<div class="section-divider"><hr></div>
+
+<!-- MESSAGING -->
+<div class="section-wrap" id="messaging">
+  <div class="section-label" data-t="msg_label">Key Messaging</div>
+  <div class="section-title" data-t="msg_title_html">Words That <span>Command</span></div>
+  <p class="section-desc" data-t="msg_desc">Slogans engineered to communicate our value proposition — emphasizing urgency, exclusivity, and verifiable financial outcomes.</p>
+  <div style="margin-top:3rem;">
+    <div class="headline-card primary"><div class="headline-type" data-t="msg1_type">Primary Slogan · Core Value Statement</div><div class="headline-text" data-t="msg1_text">Your Automated Command Center for Exponential Capital.</div></div>
+    <div class="headline-card secondary"><div class="headline-type" data-t="msg2_type">Secondary Slogan</div><div class="headline-text" data-t="msg2_text">The Market Is Moving. Are You Positioned to Profit?</div></div>
+    <div class="headline-card secondary"><div class="headline-type" data-t="msg3_type">Secondary Slogan</div><div class="headline-text" data-t="msg3_text">Where Automation Meets Ambition. Results Are Mandatory.</div></div>
+    <div class="headline-card secondary"><div class="headline-type" data-t="msg4_type">Campaign Tagline</div><div class="headline-text" data-t="msg4_text">Command Yours. The Market Doesn't Wait.</div></div>
+  </div>
+</div>
+
+<div class="section-divider"><hr></div>
+
+<!-- TOKEN -->
+<div class="section-wrap" id="token">
+  <div class="section-label" data-t="token_label">Proprietary Token</div>
+  <div class="section-title" data-t="token_title_html">The <span>PCC Token</span><br>Ecosystem</div>
+  <p class="section-desc" data-t="token_desc">The PCC Token is the digital backbone of our automated engine — commanding verifiable value and exclusive financial access across our entire ecosystem.</p>
+  <div class="token-layout">
+    <div class="token-main">
+      <div class="token-symbol">P</div>
+      <h3>$PCC Token</h3>
+      <p data-t="token_p">The PCC Token is non-inflationary and intrinsically tied to the performance of our proprietary algorithms — establishing it as a high-value, high-demand digital asset within the global FinTech ecosystem.</p>
+      <div class="token-stats">
+        <div class="token-stat"><div class="token-stat-value">$1.2B+</div><div class="token-stat-label" data-t="ts1">Ecosystem TVL</div></div>
+        <div class="token-stat"><div class="token-stat-value">$18.4M</div><div class="token-stat-label" data-t="ts2">Daily Volume</div></div>
+        <div class="token-stat"><div class="token-stat-value">847K+</div><div class="token-stat-label" data-t="ts3">Verified Holders</div></div>
+        <div class="token-stat"><div class="token-stat-value">99.99%</div><div class="token-stat-label" data-t="ts4">Governance Integrity</div></div>
+      </div>
+    </div>
+    <div class="token-sidebar">
+      <div class="token-feature"><h4 data-t="tf1_h">Non-Inflationary Supply</h4><p data-t="tf1_p">Fixed supply cap ensures PCC token maintains scarcity-driven value appreciation across all market cycles.</p></div>
+      <div class="token-feature"><h4 data-t="tf2_h">Algorithm-Backed Value</h4><p data-t="tf2_p">Token performance is directly anchored to the returns generated by our proprietary trading algorithms.</p></div>
+      <div class="token-feature"><h4 data-t="tf3_h">Governance Rights</h4><p data-t="tf3_p">PCC holders participate in platform governance votes, shaping the future direction of the ecosystem.</p></div>
+      <div class="token-feature"><h4 data-t="tf4_h">Continuous Audit</h4><p data-t="tf4_p">Algorithmic governance and third-party audit protocols ensure transparent, reliable token integrity at all times.</p></div>
+      <div class="token-feature"><h4 data-t="tf5_h">Staking Rewards</h4><p data-t="tf5_p">Stake PCC tokens to earn compounding yield drawn directly from the platform's automated trading profits.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"><hr></div>
+
+<!-- SOCIAL PROOF -->
+<div class="section-wrap" id="proof">
+  <div class="section-label" data-t="proof_label">Social Proof</div>
+  <div class="section-title" data-t="proof_title_html">Verified <span>Success</span> Stories</div>
+  <p class="section-desc" data-t="proof_desc">A real-time stream from our verified community of over 847,000 members actively commanding their capital through our platform.</p>
+
+  <div class="live-feed">
+    <div class="live-feed-header">
+      <div class="live-feed-title"><span data-t="feed_title">Live Activity Feed</span><div class="live-badge"><div class="status-dot"></div>LIVE</div></div>
+      <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);" data-t="feed_count">847,241 verified members online</div>
+    </div>
+    <div class="feed-rows" id="live-feed"></div>
+  </div>
+
+  <div class="testimonials">
+    <div class="testimonial"><div class="testimonial-header"><div class="testimonial-avatar">MR</div><div><div class="testimonial-name">Marcus R.</div><div class="testimonial-role">Entrepreneur · Miami, FL</div></div></div><div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div><p class="testimonial-text" data-t="t1_text">Profit Command Center changed my entire approach to passive income. The automation is genuinely unmatched — I check in once a week and the system handles everything.</p><div class="testimonial-amount">↑ +$48,200 verified · 6 months</div></div>
+    <div class="testimonial"><div class="testimonial-header"><div class="testimonial-avatar">SL</div><div><div class="testimonial-name">Sofia L.</div><div class="testimonial-role">Financial Analyst · London, UK</div></div></div><div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div><p class="testimonial-text" data-t="t2_text">As someone who works in finance, I was skeptical. After running the numbers independently, the PCC algorithm consistently outperforms anything I've benchmarked against.</p><div class="testimonial-amount">↑ +$91,700 verified · 11 months</div></div>
+    <div class="testimonial"><div class="testimonial-header"><div class="testimonial-avatar">DK</div><div><div class="testimonial-name">David K.</div><div class="testimonial-role">Tech Executive · Singapore</div></div></div><div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div><p class="testimonial-text" data-t="t3_text">The transparency is what sets PCC apart. Every transaction is logged, every return verifiable. I've referred 14 colleagues — all reporting the same results.</p><div class="testimonial-amount">↑ +$127,400 verified · 14 months</div></div>
+  </div>
+
+  <div style="margin-top:4rem;"><div class="section-label" data-t="security_label">Security Architecture</div></div>
+  <div class="security-grid">
+    <div class="security-cell"><div class="security-icon">§</div><h4 data-t="sec1_h">Client Privacy Protocol</h4><p data-t="sec1_p">Individual member identities are classified as confidential. Non-negotiable privacy protocols reinforce the secure nature of the PCC system.</p></div>
+    <div class="security-cell"><div class="security-icon">⊕</div><h4 data-t="sec2_h">Algorithmic Governance</h4><p data-t="sec2_p">Continuous algorithmic audit trails and multi-signature execution protocols ensure every trade is transparent, traceable, and tamper-proof.</p></div>
+    <div class="security-cell"><div class="security-icon">◈</div><h4 data-t="sec3_h">Proprietary Infrastructure</h4><p data-t="sec3_p">Built on proprietary servers with military-grade encryption — zero reliance on third-party infrastructure that could compromise performance or data integrity.</p></div>
+  </div>
+</div>
+
+<div class="section-divider"><hr></div>
+
+<!-- OWNER CONTACT SECTION -->
+<div class="section-wrap" id="contact">
+  <div class="section-label" data-t="contact_label">Owner &amp; Contact</div>
+  <div class="section-title" data-t="contact_title_html">Meet the <span>Founder</span></div>
+  <p class="section-desc" data-t="contact_desc">For all inquiries, partnerships, client onboarding, and support — reach out directly to the owner of Profit Command Center Ltd via TikTok.</p>
+
+  <div class="owner-section">
+    <div class="owner-layout">
+      <div class="owner-avatar">C</div>
+      <div>
+        <div class="owner-info-badge" data-t="owner_badge">Founder &amp; Owner · Profit Command Center Ltd</div>
+        <div class="owner-name">Chelsea McIntosh</div>
+        <div class="owner-role" data-t="owner_role">Chief Executive · Global Operations Director</div>
+        <p class="owner-desc" data-t="owner_desc">Chelsea leads Profit Command Center Ltd with a vision of financial empowerment for clients worldwide. For direct inquiries — whether you're an existing member, a prospective client, or a partner — the fastest way to connect is through her official TikTok account. She personally responds to all serious inquiries.</p>
+      </div>
+      <a href="https://www.tiktok.com/@chelseamccintoshx?_r=1&_t=ZS-95eWjNTpzIe" target="_blank" rel="noopener" class="tiktok-contact-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;flex-shrink:0;">
+          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.19 8.19 0 0 0 4.79 1.52V6.76a4.85 4.85 0 0 1-1.02-.07z"/>
+        </svg>
+        <span data-t="contact_tiktok_btn">Contact on TikTok</span>
+      </a>
+    </div>
+
+    <div style="margin-top:2.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+      <div style="border:1px solid var(--border);background:var(--panel);padding:1.3rem;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:0.2em;margin-bottom:8px;" data-t="ci_platform">PLATFORM</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;margin-bottom:4px;">TikTok</div>
+        <div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);">@chelseamccintoshx</div>
+      </div>
+      <div style="border:1px solid var(--border);background:var(--panel);padding:1.3rem;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:0.2em;margin-bottom:8px;" data-t="ci_response">RESPONSE TIME</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;margin-bottom:4px;" data-t="ci_response_val">Within 24 Hours</div>
+        <div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);" data-t="ci_response_sub">Priority: Existing Clients</div>
+      </div>
+      <div style="border:1px solid var(--border);background:var(--panel);padding:1.3rem;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:0.2em;margin-bottom:8px;" data-t="ci_availability">AVAILABILITY</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;margin-bottom:4px;" data-t="ci_avail_val">Global · All Time Zones</div>
+        <div style="font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);" data-t="ci_avail_sub">EN / ES supported</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="big-logo">
+        <div class="big-logo-mark" style="width:38px;height:38px;font-size:19px;">P</div>
+        <div>
+          <div class="logo-wordmark" style="font-size:15px;">Profit Command Center</div>
+          <div class="logo-sub">Ltd · Command Your Capital</div>
+        </div>
+      </div>
+      <p data-t="footer_brand_p">The global benchmark for automated capital generation. Transparent, verifiable, and uncompromising in performance. Command your financial destiny.</p>
+      <a href="https://www.tiktok.com/@chelseamccintoshx?_r=1&_t=ZS-95eWjNTpzIe" target="_blank" rel="noopener" class="footer-tiktok-link">
+        <svg style="width:14px;height:14px;" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.19 8.19 0 0 0 4.79 1.52V6.76a4.85 4.85 0 0 1-1.02-.07z"/></svg>
+        <span data-t="footer_tiktok">@chelseamccintoshx</span>
+      </a>
+    </div>
+    <div class="footer-col">
+      <h4 data-t="fc1_h">Platform</h4>
+      <a href="#" data-t="fc1_1">Overview</a>
+      <a href="#" data-t="fc1_2">How It Works</a>
+      <a href="#token">PCC Token</a>
+      <a href="#" data-t="fc1_3">Staking</a>
+      <a href="#" data-t="fc1_4">Performance</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-t="fc2_h">Company</h4>
+      <a href="#" data-t="fc2_1">About Us</a>
+      <a href="#" data-t="fc2_2">Brand Standards</a>
+      <a href="#" data-t="fc2_3">Partners</a>
+      <a href="#contact" data-t="fc2_4">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-t="fc3_h">Legal</h4>
+      <a href="#" data-t="fc3_1">Privacy Policy</a>
+      <a href="#" data-t="fc3_2">Terms of Use</a>
+      <a href="#" data-t="fc3_3">Risk Disclosure</a>
+      <a href="#" data-t="fc3_4">Compliance</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy" data-t="footer_copy">© 2024 Profit Command Center Ltd. All Rights Reserved. Proprietary &amp; Confidential.</div>
+    <div class="footer-legal">
+      <a href="#" data-t="fl1">Privacy</a>
+      <a href="#" data-t="fl2">Terms</a>
+      <a href="#" data-t="fl3">Risk Disclosure</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING TIKTOK -->
+<a href="https://www.tiktok.com/@chelseamccintoshx?_r=1&_t=ZS-95eWjNTpzIe" target="_blank" rel="noopener" class="float-tiktok" id="float-tiktok">
+  <svg style="width:16px;height:16px;flex-shrink:0;" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.19 8.19 0 0 0 4.79 1.52V6.76a4.85 4.85 0 0 1-1.02-.07z"/></svg>
+  <span id="float-tiktok-text" data-t="float_tiktok">Contact Owner</span>
+</a>
+
+<script>
+// ─────────────────────────────────────────────
+// TRANSLATIONS
+// ─────────────────────────────────────────────
+const T = {
+  en: {
+    hero_tag: "Official Brand Standards Document · 2024",
+    hero_h1_html: "The <em>Definitive</em><br>Command Standard",
+    hero_sub: "Profit Command Center Ltd sets the global benchmark for automated capital generation. This document governs our visual identity, voice, and strategic narrative.",
+    hero_cta1: "Explore Standards", hero_cta2: "View PCC Token",
+    nav_identity:"Identity", nav_voice:"Voice", nav_visuals:"Visuals",
+    nav_messaging:"Messaging", nav_token:"Token", nav_contact:"Contact",
+    nav_tiktok:"Contact Owner", nav_status:"SYSTEM ACTIVE",
+    stats_label:"Performance Metrics",
+    stats_title_html:"Numbers That<br>Command <span>Attention</span>",
+    stats_desc:"Real-time data from our automated capital engine — transparent, verifiable, and continuously updated.",
+    stat1:"Total Value Locked", stat2:"Verified Members", stat3:"Average YTD Return", stat4:"System Uptime",
+    identity_label:"Core Identity",
+    identity_title_html:"Who We <span>Are</span>",
+    identity_desc:"The fundamental principles that govern our purpose, vision, and uncompromising standard of operational excellence.",
+    id_mission_label:"MISSION", id_mission_h:"The Definitive Mission",
+    id_mission_p:"To empower clients with a cutting-edge automated platform that consistently captures maximum yield from high-growth market cycles — delivering exclusive access to exponential wealth generation on complete autopilot.",
+    id_vision_label:"VISION", id_vision_h:"Future Vision",
+    id_vision_p:"To become the world's most recognized automated FinTech command platform — defining the new standard for efficient, high-performance capital generation for the modern investor.",
+    id_ethics_label:"ETHICS", id_ethics_h:"Ethical Mandate",
+    id_ethics_p:"We prioritize unwavering transparency in our automated mechanics and performance metrics. Integrity and security are the cornerstones of every technological implementation we deploy.",
+    id_pos_label:"POSITION", id_pos_h:"Market Position",
+    id_pos_p:"Profit Command Center Ltd occupies the apex of automated capital technology. We do not compete — we set the benchmark against which all others are measured.",
+    pillars_label:"Value Pillars",
+    pillars_title_html:"Four Pillars of <span>Command</span>",
+    p1_h:"The Automated Profit Engine", p1_p:"Our proprietary system operates 24/7 autonomously, identifying and executing optimal trades. Technology handles the heavy lifting — reliably converting minimum initial capital into substantial, verifiable returns.",
+    p2_h:"Market Timing Dominance", p2_p:"Our algorithms are calibrated specifically for high-growth economic periods. We bypass market sentiment, leveraging advanced data analysis to perfectly position clients to capitalize on bullish trends.",
+    p3_h:"Quantifiable Results Only", p3_p:"We replace speculation with concrete outcomes. Our platform is built on proven, live trading results — consistently demonstrating the capacity to multiply investments exponentially over defined time horizons.",
+    p4_h:"Securing Financial Autonomy", p4_p:"Profit Command Center is more than an investment tool — it is a vehicle for achieving substantial financial independence. We provide the technology that empowers clients to command their economic destiny.",
+    voice_label:"Brand Voice", voice_title_html:"The Command <span>Persona</span>",
+    voice_desc:"Our voice is decisive, data-driven, and uncompromising. Every communication reinforces our position as the apex capital generation platform.",
+    v1_h:"Decisive & Forward-Looking", v1_p:"We demand attention by emphasizing urgency and momentum. Our language drives immediate, informed action to seize time-sensitive market opportunities before they close.",
+    v1_do:'DO: "Act now — the window is open."', v1_dont:'DON\'T: "You might want to consider..."',
+    v2_h:"Quantifiable & Data-Backed", v2_p:"Every claim centers on demonstrable results. We eliminate jargon and prioritize specific, achievable, verifiable financial metrics that clients can hold us to.",
+    v2_do:'DO: "340% verified YTD return."', v2_dont:'DON\'T: "We aim for good results."',
+    v3_h:"Aspirational & Exclusive", v3_p:"Our tone resonates with individuals committed to high-level wealth generation. Profit Command Center is the elite tool for ambitious investors who do not settle for average.",
+    v3_do:'DO: "Reserved for decisive investors."', v3_dont:'DON\'T: "Open to everyone, no limits."',
+    visuals_label:"Visual Standards", visuals_title_html:"Identity by <span>Design</span>",
+    visuals_desc:"Our visual language is minimal, authoritative, and precise — reflecting our commitment to automated accuracy and financial command.",
+    logo_label:"Logomark System",
+    logo_dark_label:"Primary — Dark Background", logo_light_label:"Inverted — Light Background",
+    lr1_h:"Logomark Concept", lr1_p:"The hexagonal 'P' mark fuses geometric precision with upward momentum — communicating efficiency, command, and flawless execution in one symbol.",
+    lr2_h:"Clear Space Rule", lr2_p:"Maintain minimum clear space equal to the full width of the 'P' mark on all sides. Minimum digital size: 48px wide.",
+    lr3_h:"Usage Prohibitions", lr3_p:"Never stretch, distort, recolor, or apply drop shadows to the mark. Gold on black or black on gold only.",
+    lr4_h:"Typography Pairing", lr4_p:"Wordmark uses Syne ExtraBold exclusively. Tagline uses DM Mono Light with 0.35em letter-spacing.",
+    color_label:"Official Color Palette", color_desc:"Click any swatch to copy the hex code to your clipboard.",
+    c1_name:"Command Gold", c2_name:"Command Black", c3_name:"Surface Dark", c4_name:"Signal Green", c5_name:"Alert Red",
+    type_label:"Typography System",
+    type_display:"Command the Market.", type_heading:"Automated. Precise. Unstoppable.",
+    type_body:"Our platform translates initial capital into compounding returns through proprietary algorithmic execution — designed for investors who demand measurable, auditable performance.",
+    msg_label:"Key Messaging", msg_title_html:"Words That <span>Command</span>",
+    msg_desc:"Slogans engineered to communicate our value proposition — emphasizing urgency, exclusivity, and verifiable financial outcomes.",
+    msg1_type:"Primary Slogan · Core Value Statement", msg1_text:"Your Automated Command Center for Exponential Capital.",
+    msg2_type:"Secondary Slogan", msg2_text:"The Market Is Moving. Are You Positioned to Profit?",
+    msg3_type:"Secondary Slogan", msg3_text:"Where Automation Meets Ambition. Results Are Mandatory.",
+    msg4_type:"Campaign Tagline", msg4_text:"Command Yours. The Market Doesn't Wait.",
+    token_label:"Proprietary Token", token_title_html:"The <span>PCC Token</span><br>Ecosystem",
+    token_desc:"The PCC Token is the digital backbone of our automated engine — commanding verifiable value and exclusive financial access across our entire ecosystem.",
+    token_p:"The PCC Token is non-inflationary and intrinsically tied to the performance of our proprietary algorithms — establishing it as a high-value, high-demand digital asset within the global FinTech ecosystem.",
+    ts1:"Ecosystem TVL", ts2:"Daily Volume", ts3:"Verified Holders", ts4:"Governance Integrity",
+    tf1_h:"Non-Inflationary Supply", tf1_p:"Fixed supply cap ensures PCC token maintains scarcity-driven value appreciation across all market cycles.",
+    tf2_h:"Algorithm-Backed Value", tf2_p:"Token performance is directly anchored to the returns generated by our proprietary trading algorithms.",
+    tf3_h:"Governance Rights", tf3_p:"PCC holders participate in platform governance votes, shaping the future direction of the ecosystem.",
+    tf4_h:"Continuous Audit", tf4_p:"Algorithmic governance and third-party audit protocols ensure transparent, reliable token integrity at all times.",
+    tf5_h:"Staking Rewards", tf5_p:"Stake PCC tokens to earn compounding yield drawn directly from the platform's automated trading profits.",
+    proof_label:"Social Proof", proof_title_html:"Verified <span>Success</span> Stories",
+    proof_desc:"A real-time stream from our verified community of over 847,000 members actively commanding their capital through our platform.",
+    feed_title:"Live Activity Feed", feed_count:"847,241 verified members online",
+    t1_text:"Profit Command Center changed my entire approach to passive income. The automation is genuinely unmatched — I check in once a week and the system handles everything.",
+    t2_text:"As someone who works in finance, I was skeptical. After running the numbers independently, the PCC algorithm consistently outperforms anything I've benchmarked against.",
+    t3_text:"The transparency is what sets PCC apart. Every transaction is logged, every return verifiable. I've referred 14 colleagues — all reporting the same results.",
+    security_label:"Security Architecture",
+    sec1_h:"Client Privacy Protocol", sec1_p:"Individual member identities are classified as confidential. Non-negotiable privacy protocols reinforce the secure nature of the PCC system.",
+    sec2_h:"Algorithmic Governance", sec2_p:"Continuous algorithmic audit trails and multi-signature execution protocols ensure every trade is transparent, traceable, and tamper-proof.",
+    sec3_h:"Proprietary Infrastructure", sec3_p:"Built on proprietary servers with military-grade encryption — zero reliance on third-party infrastructure that could compromise performance or data integrity.",
+    contact_label:"Owner & Contact", contact_title_html:"Meet the <span>Founder</span>",
+    contact_desc:"For all inquiries, partnerships, client onboarding, and support — reach out directly to the owner of Profit Command Center Ltd via TikTok.",
+    owner_badge:"Founder & Owner · Profit Command Center Ltd",
+    owner_role:"Chief Executive · Global Operations Director",
+    owner_desc:"Chelsea leads Profit Command Center Ltd with a vision of financial empowerment for clients worldwide. For direct inquiries — whether you're an existing member, a prospective client, or a partner — the fastest way to connect is through her official TikTok account. She personally responds to all serious inquiries.",
+    contact_tiktok_btn:"Contact on TikTok",
+    ci_platform:"PLATFORM", ci_response:"RESPONSE TIME", ci_response_val:"Within 24 Hours",
+    ci_response_sub:"Priority: Existing Clients", ci_availability:"AVAILABILITY",
+    ci_avail_val:"Global · All Time Zones", ci_avail_sub:"EN / ES supported",
+    footer_brand_p:"The global benchmark for automated capital generation. Transparent, verifiable, and uncompromising in performance. Command your financial destiny.",
+    footer_tiktok:"@chelseamccintoshx",
+    fc1_h:"Platform", fc1_1:"Overview", fc1_2:"How It Works", fc1_3:"Staking", fc1_4:"Performance",
+    fc2_h:"Company", fc2_1:"About Us", fc2_2:"Brand Standards", fc2_3:"Partners", fc2_4:"Contact",
+    fc3_h:"Legal", fc3_1:"Privacy Policy", fc3_2:"Terms of Use", fc3_3:"Risk Disclosure", fc3_4:"Compliance",
+    footer_copy:"© 2024 Profit Command Center Ltd. All Rights Reserved. Proprietary & Confidential.",
+    fl1:"Privacy", fl2:"Terms", fl3:"Risk Disclosure",
+    float_tiktok:"Contact Owner",
+    feed_actions:["initiated position","profit withdrawal","stake increase","first trade executed","compound reinvested","monthly return claimed","staking yield paid","referral bonus credited","algo cycle completed","new position opened","quarterly dividend","premium tier unlocked"],
+    feed_just_now:"just now", feed_m_ago:"m ago"
+  },
+  es: {
+    hero_tag: "Documento Oficial de Estándares de Marca · 2024",
+    hero_h1_html: "El Estándar <em>Definitivo</em><br>de Comando",
+    hero_sub: "Profit Command Center Ltd establece el punto de referencia global para la generación automatizada de capital. Este documento rige nuestra identidad visual, voz y narrativa estratégica.",
+    hero_cta1: "Explorar Estándares", hero_cta2: "Ver Token PCC",
+    nav_identity:"Identidad", nav_voice:"Voz", nav_visuals:"Visual",
+    nav_messaging:"Mensajes", nav_token:"Token", nav_contact:"Contacto",
+    nav_tiktok:"Contactar Dueña", nav_status:"SISTEMA ACTIVO",
+    stats_label:"Métricas de Rendimiento",
+    stats_title_html:"Números que<br>Mandan <span>Atención</span>",
+    stats_desc:"Datos en tiempo real de nuestro motor de capital automatizado — transparentes, verificables y actualizados continuamente.",
+    stat1:"Valor Total Bloqueado", stat2:"Miembros Verificados", stat3:"Retorno Promedio Anual", stat4:"Tiempo de Actividad",
+    identity_label:"Identidad Central",
+    identity_title_html:"Quiénes <span>Somos</span>",
+    identity_desc:"Los principios fundamentales que rigen nuestro propósito, visión y estándar de excelencia operativa.",
+    id_mission_label:"MISIÓN", id_mission_h:"La Misión Definitiva",
+    id_mission_p:"Empoderar a los clientes con una plataforma automatizada de vanguardia que capture consistentemente el máximo rendimiento de los ciclos de mercado de alto crecimiento — brindando acceso exclusivo a la generación exponencial de riqueza en piloto automático.",
+    id_vision_label:"VISIÓN", id_vision_h:"Visión Futura",
+    id_vision_p:"Ser la plataforma FinTech de comando automatizado más reconocida del mundo — definiendo el nuevo estándar para la generación de capital eficiente y de alto rendimiento para el inversor moderno.",
+    id_ethics_label:"ÉTICA", id_ethics_h:"Mandato Ético",
+    id_ethics_p:"Priorizamos la transparencia inquebrantable en nuestra mecánica automatizada y métricas de rendimiento. La integridad y la seguridad son las piedras angulares de toda implementación tecnológica.",
+    id_pos_label:"POSICIÓN", id_pos_h:"Posición en el Mercado",
+    id_pos_p:"Profit Command Center Ltd ocupa el ápice de la tecnología de capital automatizado. No competimos — establecemos el punto de referencia contra el cual se miden todos los demás.",
+    pillars_label:"Pilares de Valor",
+    pillars_title_html:"Cuatro Pilares de <span>Comando</span>",
+    p1_h:"El Motor de Ganancias Automatizado", p1_p:"Nuestro sistema propietario opera 24/7 de forma autónoma, identificando y ejecutando operaciones óptimas. La tecnología se encarga del trabajo pesado — convirtiendo de manera fiable el capital inicial mínimo en rendimientos sustanciales y verificables.",
+    p2_h:"Dominio del Tiempo del Mercado", p2_p:"Nuestros algoritmos están calibrados específicamente para períodos de alto crecimiento económico. Omitimos el sentimiento del mercado, aprovechando el análisis de datos avanzado para posicionar perfectamente a los clientes.",
+    p3_h:"Solo Resultados Cuantificables", p3_p:"Sustituimos la especulación por resultados concretos. Nuestra plataforma se basa en resultados comerciales probados en vivo — demostrando constantemente la capacidad de multiplicar exponencialmente las inversiones.",
+    p4_h:"Asegurando la Autonomía Financiera", p4_p:"Profit Command Center es más que una herramienta de inversión — es un vehículo para lograr una independencia financiera sustancial. Proporcionamos la tecnología que faculta a nuestros clientes a controlar su destino económico.",
+    voice_label:"Voz de Marca", voice_title_html:"La Persona de <span>Comando</span>",
+    voice_desc:"Nuestra voz es decisiva, basada en datos e implacable. Cada comunicación refuerza nuestra posición como la plataforma de generación de capital de primer nivel.",
+    v1_h:"Decisiva y Orientada al Futuro", v1_p:"Exigimos atención enfatizando urgencia y momentum. Nuestro lenguaje impulsa la acción inmediata e informada para aprovechar oportunidades de mercado antes de que se cierren.",
+    v1_do:'HACER: "Actúa ahora — la ventana está abierta."', v1_dont:'NO HACER: "Quizás deberías considerar..."',
+    v2_h:"Cuantificable y Respaldada por Datos", v2_p:"Cada afirmación se centra en resultados demostrables. Eliminamos la jerga priorizando métricas financieras específicas, alcanzables y verificables.",
+    v2_do:'HACER: "340% de retorno anual verificado."', v2_dont:'NO HACER: "Buscamos buenos resultados."',
+    v3_h:"Aspiracional y Exclusiva", v3_p:"Nuestro tono resuena con personas comprometidas con la generación de riqueza de alto nivel. Profit Command Center es la herramienta élite para inversores ambiciosos.",
+    v3_do:'HACER: "Reservado para inversores decisivos."', v3_dont:'NO HACER: "Abierto a todos, sin límites."',
+    visuals_label:"Estándares Visuales", visuals_title_html:"Identidad por <span>Diseño</span>",
+    visuals_desc:"Nuestro lenguaje visual es mínimo, autoritario y preciso — reflejando nuestro compromiso con la precisión automatizada y el comando financiero.",
+    logo_label:"Sistema de Logomarca",
+    logo_dark_label:"Primario — Fondo Oscuro", logo_light_label:"Invertido — Fondo Claro",
+    lr1_h:"Concepto del Logomarca", lr1_p:"La marca hexagonal 'P' fusiona precisión geométrica con impulso ascendente — comunicando eficiencia, comando y ejecución impecable en un solo símbolo.",
+    lr2_h:"Regla de Espacio Libre", lr2_p:"Mantener espacio libre mínimo igual al ancho total de la marca 'P' en todos los lados. Tamaño digital mínimo: 48px de ancho.",
+    lr3_h:"Prohibiciones de Uso", lr3_p:"Nunca estirar, distorsionar, recolorear o aplicar sombras a la marca. Solo oro sobre negro o negro sobre oro.",
+    lr4_h:"Combinación Tipográfica", lr4_p:"El logotipo usa exclusivamente Syne ExtraBold. El eslogan usa DM Mono Light con espaciado de 0.35em.",
+    color_label:"Paleta de Colores Oficial", color_desc:"Haz clic en cualquier muestra para copiar el código hexadecimal.",
+    c1_name:"Oro de Comando", c2_name:"Negro de Comando", c3_name:"Superficie Oscura", c4_name:"Verde Señal", c5_name:"Rojo de Alerta",
+    type_label:"Sistema Tipográfico",
+    type_display:"Domina el Mercado.", type_heading:"Automatizado. Preciso. Imparable.",
+    type_body:"Nuestra plataforma traduce el capital inicial en rendimientos compuestos a través de la ejecución algorítmica propietaria — diseñada para inversores que exigen un rendimiento medible y auditable.",
+    msg_label:"Mensajes Clave", msg_title_html:"Palabras que <span>Mandan</span>",
+    msg_desc:"Eslóganes diseñados para comunicar nuestra propuesta de valor — enfatizando urgencia, exclusividad y resultados financieros verificables.",
+    msg1_type:"Eslogan Principal · Declaración de Valor", msg1_text:"Tu Centro de Comando Automatizado para Capital Exponencial.",
+    msg2_type:"Eslogan Secundario", msg2_text:"El Mercado Se Mueve. ¿Estás Posicionado para Ganar?",
+    msg3_type:"Eslogan Secundario", msg3_text:"Donde la Automatización Se Une a la Ambición. Los Resultados Son Obligatorios.",
+    msg4_type:"Eslogan de Campaña", msg4_text:"Comanda el Tuyo. El Mercado No Espera.",
+    token_label:"Token Propietario", token_title_html:"El Ecosistema del<br><span>Token PCC</span>",
+    token_desc:"El Token PCC es la columna vertebral digital de nuestro motor automatizado — ordenando valor verificable y acceso financiero exclusivo en todo nuestro ecosistema.",
+    token_p:"El Token PCC no es inflacionario y está intrínsecamente vinculado al rendimiento de nuestros algoritmos propietarios — estableciéndolo como un activo digital de alto valor y alta demanda dentro del ecosistema global FinTech.",
+    ts1:"TVL del Ecosistema", ts2:"Volumen Diario", ts3:"Titulares Verificados", ts4:"Integridad de Gobernanza",
+    tf1_h:"Suministro No Inflacionario", tf1_p:"El límite de suministro fijo garantiza que el token PCC mantenga una apreciación de valor impulsada por escasez en todos los ciclos del mercado.",
+    tf2_h:"Valor Respaldado por Algoritmo", tf2_p:"El rendimiento del token está directamente anclado a los retornos generados por nuestros algoritmos propietarios de trading.",
+    tf3_h:"Derechos de Gobernanza", tf3_p:"Los titulares de PCC participan en votaciones de gobernanza de la plataforma, dando forma a la dirección futura del ecosistema.",
+    tf4_h:"Auditoría Continua", tf4_p:"La gobernanza algorítmica y los protocolos de auditoría de terceros garantizan la integridad confiable y transparente del token en todo momento.",
+    tf5_h:"Recompensas de Staking", tf5_p:"Haz staking de tokens PCC para ganar rendimiento compuesto extraído directamente de las ganancias del trading automatizado de la plataforma.",
+    proof_label:"Prueba Social", proof_title_html:"Historias de <span>Éxito</span> Verificadas",
+    proof_desc:"Un flujo en tiempo real de nuestra comunidad verificada de más de 847,000 miembros que activamente gestionan su capital a través de nuestra plataforma.",
+    feed_title:"Actividad en Vivo", feed_count:"847,241 miembros verificados en línea",
+    t1_text:"Profit Command Center cambió completamente mi enfoque hacia los ingresos pasivos. La automatización es genuinamente incomparable — reviso una vez a la semana y el sistema se encarga de todo.",
+    t2_text:"Como alguien que trabaja en finanzas, era escéptico. Después de revisar los números de forma independiente, el algoritmo PCC supera consistentemente todo lo que he analizado.",
+    t3_text:"La transparencia es lo que diferencia a PCC. Cada transacción está registrada, cada retorno es verificable. He referido a 14 colegas — todos reportan los mismos resultados.",
+    security_label:"Arquitectura de Seguridad",
+    sec1_h:"Protocolo de Privacidad del Cliente", sec1_p:"Las identidades individuales de los miembros son clasificadas como confidenciales. Los protocolos estrictos de privacidad refuerzan la naturaleza segura del sistema PCC.",
+    sec2_h:"Gobernanza Algorítmica", sec2_p:"Las pistas de auditoría algorítmica continua y los protocolos de ejecución con múltiples firmas garantizan que cada operación sea transparente, rastreable e inalterable.",
+    sec3_h:"Infraestructura Propietaria", sec3_p:"Construida sobre servidores propietarios con cifrado de grado militar — cero dependencia de infraestructura de terceros que pueda comprometer el rendimiento o la integridad de los datos.",
+    contact_label:"Dueña y Contacto", contact_title_html:"Conoce a la <span>Fundadora</span>",
+    contact_desc:"Para todas las consultas, asociaciones, incorporación de clientes y soporte — comunícate directamente con la dueña de Profit Command Center Ltd a través de TikTok.",
+    owner_badge:"Fundadora y Dueña · Profit Command Center Ltd",
+    owner_role:"Directora Ejecutiva · Directora de Operaciones Globales",
+    owner_desc:"Chelsea dirige Profit Command Center Ltd con una visión de empoderamiento financiero para clientes en todo el mundo. Para consultas directas — ya seas miembro existente, cliente prospecto o socio — la forma más rápida de conectarte es a través de su cuenta oficial de TikTok. Responde personalmente a todas las consultas serias.",
+    contact_tiktok_btn:"Contactar en TikTok",
+    ci_platform:"PLATAFORMA", ci_response:"TIEMPO DE RESPUESTA", ci_response_val:"Dentro de 24 Horas",
+    ci_response_sub:"Prioridad: Clientes Actuales", ci_availability:"DISPONIBILIDAD",
+    ci_avail_val:"Global · Todas las Zonas Horarias", ci_avail_sub:"Compatible EN / ES",
+    footer_brand_p:"El punto de referencia global para la generación automatizada de capital. Transparente, verificable e implacable en rendimiento. Comanda tu destino financiero.",
+    footer_tiktok:"@chelseamccintoshx",
+    fc1_h:"Plataforma", fc1_1:"Resumen", fc1_2:"Cómo Funciona", fc1_3:"Staking", fc1_4:"Rendimiento",
+    fc2_h:"Empresa", fc2_1:"Acerca de", fc2_2:"Estándares de Marca", fc2_3:"Socios", fc2_4:"Contacto",
+    fc3_h:"Legal", fc3_1:"Política de Privacidad", fc3_2:"Términos de Uso", fc3_3:"Divulgación de Riesgo", fc3_4:"Cumplimiento",
+    footer_copy:"© 2024 Profit Command Center Ltd. Todos los Derechos Reservados. Propiedad y Confidencial.",
+    fl1:"Privacidad", fl2:"Términos", fl3:"Divulgación de Riesgo",
+    float_tiktok:"Contactar Dueña",
+    feed_actions:["posición iniciada","retiro de ganancia","aumento de stake","primera operación ejecutada","reinversión compuesta","retorno mensual reclamado","rendimiento de staking pagado","bono de referido acreditado","ciclo de algoritmo completado","nueva posición abierta","dividendo trimestral","nivel premium desbloqueado"],
+    feed_just_now:"ahora mismo", feed_m_ago:"m atrás"
+  }
+};
+
+let currentLang = 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  const t = T[lang];
+  document.getElementById('html-root').setAttribute('lang', lang);
+
+  // Update all data-t elements
+  document.querySelectorAll('[data-t]').forEach(el => {
+    const key = el.getAttribute('data-t');
+    if (!t[key]) return;
+    if (key.endsWith('_html')) { el.innerHTML = t[key]; }
+    else { el.textContent = t[key]; }
+  });
+
+  // Update lang buttons
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+
+  // Update banner text
+  document.getElementById('lang-banner-text').textContent =
+    lang === 'es'
+      ? '🌐 Idioma cambiado a Español'
+      : '🌐 Language set to English';
+
+  // Update page title
+  document.title = lang === 'es'
+    ? 'Profit Command Center Ltd | Estándares Oficiales de Marca'
+    : 'Profit Command Center Ltd | Official Brand Standards';
+}
+
+function detectAndSetLang() {
+  const langs = navigator.languages || [navigator.language || 'en'];
+  const isSpanish = langs.some(l => l.toLowerCase().startsWith('es'));
+  const banner = document.getElementById('lang-banner');
+
+  if (isSpanish) {
+    document.getElementById('lang-banner-text').textContent = '🌐 Hemos detectado tu región en español. ¿Cambiar al español?';
+    document.getElementById('btn-es').classList.add('active');
+    // Auto-switch after 1s for Spanish regions
+    setTimeout(() => { setLang('es'); }, 1000);
+  } else {
+    document.getElementById('btn-en').classList.add('active');
+    // Hide banner for English users after 4s
+    setTimeout(() => { banner.style.display = 'none'; }, 4000);
+  }
+}
+
+// ─────────────────────────────────────────────
+// NAV HEIGHT BASED ON BANNER
+// ─────────────────────────────────────────────
+function adjustNavPosition() {
+  const banner = document.getElementById('lang-banner');
+  const nav = document.getElementById('main-nav');
+  const bannerH = banner.style.display === 'none' ? 0 : banner.offsetHeight;
+  nav.style.top = bannerH + 'px';
+  document.querySelector('main').style.paddingTop = (64 + bannerH) + 'px';
+}
+
+// ─────────────────────────────────────────────
+// MOBILE MENU
+// ─────────────────────────────────────────────
+function toggleMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const burger = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  burger.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+
+// ─────────────────────────────────────────────
+// LIVE FEED
+// ─────────────────────────────────────────────
+const feedPeople = [
+  ['J.M.','Kingston, JM','+$3,200'],['A.P.','Toronto, CA','+$18,450'],
+  ['R.T.','Dubai, AE','+$50,000'],['L.N.','Lagos, NG','+$890'],
+  ['C.B.','Miami, FL','+$7,100'],['H.K.','Seoul, KR','+$22,300'],
+  ['F.O.','Paris, FR','+$4,650'],['M.S.','Sydney, AU','+$1,200'],
+  ['T.W.','New York, US','+$31,500'],['I.D.','Amsterdam, NL','+$8,000'],
+  ['B.A.','Nairobi, KE','+$5,750'],['Y.Z.','Shanghai, CN','+$100,000'],
+];
+const feed = document.getElementById('live-feed');
+let feedIdx = 0;
+
+function addFeedRow() {
+  const t = T[currentLang];
+  const [initials, location, amount] = feedPeople[feedIdx % feedPeople.length];
+  const action = t.feed_actions[feedIdx % t.feed_actions.length];
+  const mins = Math.floor(Math.random() * 4);
+  const timeLabel = mins === 0 ? t.feed_just_now : mins + t.feed_m_ago;
+  const row = document.createElement('div');
+  row.className = 'feed-row';
+  row.innerHTML = `<span class="feed-user">${initials}</span><span class="feed-action">${location} — ${action}</span><span class="feed-amount">${amount}</span><span class="feed-time">${timeLabel}</span>`;
+  feed.insertBefore(row, feed.firstChild);
+  if (feed.children.length > 8) feed.removeChild(feed.lastChild);
+  feedIdx++;
+}
+
+// ─────────────────────────────────────────────
+// COLOR COPY
+// ─────────────────────────────────────────────
+function copyColor(el, hex) {
+  navigator.clipboard && navigator.clipboard.writeText(hex);
+  const nameEl = el.querySelector('.swatch-name');
+  const orig = nameEl.textContent;
+  nameEl.textContent = currentLang === 'es' ? '¡Copiado!' : 'Copied!';
+  setTimeout(() => { nameEl.textContent = orig; }, 1800);
+}
+
+// ─────────────────────────────────────────────
+// SMOOTH SCROLL
+// ─────────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const navH = document.getElementById('main-nav').offsetHeight;
+      const bannerH = document.getElementById('lang-banner').style.display === 'none' ? 0 : document.getElementById('lang-banner').offsetHeight;
+      const top = target.getBoundingClientRect().top + window.scrollY - navH - bannerH - 12;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+
+// ─────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  detectAndSetLang();
+  adjustNavPosition();
+  for (let i = 0; i < 7; i++) addFeedRow();
+  setInterval(addFeedRow, 2200);
+
+  // Re-adjust when banner closes
+  const observer = new MutationObserver(adjustNavPosition);
+  observer.observe(document.getElementById('lang-banner'), { attributes: true, attributeFilter: ['style'] });
+
+  // Resize handler
+  window.addEventListener('resize', adjustNavPosition);
+});
+</script>
+
+</body>
+</html>
